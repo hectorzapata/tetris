@@ -1,0 +1,13 @@
+{
+    "name": "AppMovil",
+    "alias": "appmovil",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\AppMovil\\Providers\\AppMovilServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

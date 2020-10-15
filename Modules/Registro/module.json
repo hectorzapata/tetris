@@ -1,0 +1,44 @@
+{
+    "name": "Registro",
+    "alias": "registro",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Registro\\Providers\\RegistroServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "clave": "01",
+    "titulo": "Registros",
+    "contenido": {
+        "Registro": {
+            "enlace": "/registro",
+            "icono": "fas fa-config",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        },
+         "Gestiones": {
+            "enlace": "/gestiones",
+            "icono": "fas fa-config",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        },
+         "Registros Suspendidos": {
+            "enlace": "/registro_suspendido",
+            "icono": "fas fa-config",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        }
+    }
+}

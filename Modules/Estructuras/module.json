@@ -1,0 +1,55 @@
+{
+    "name": "Estructuras",
+    "alias": "estructuras",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Estructuras\\Providers\\EstructurasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "titulo": "Estructuras",
+    "icono": "fas fa-sitemap",
+    "clave": "02",
+    "contenido": {
+        "Configurar": {
+            "enlace": "/estructuras/configurar",
+            "icono": "fas fa-cog",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        },
+        "Estructura": {
+            "enlace": "/estructuras",
+            "icono": "fas fa-list",
+            "permisos": [
+                "Editar",
+                "Eliminar",
+                "Agregar nivel",
+                "Agregar responsable",
+                "Quitar responsable"
+            ]
+        },
+        "Movilizadores": {
+            "enlace": "/estructuras/movilizadores",
+            "icono": "fas fa-list",
+            "permisos": [
+                "Editar",
+                "Eliminar"
+            ]
+        },
+        "Responsabilidades": {
+            "enlace": "/estructuras/responsabilidades",
+            "icono": "fas fa-list",
+            "permisos": [
+                "Editar",
+                "Eliminar"
+            ]
+        }
+    }
+
+}

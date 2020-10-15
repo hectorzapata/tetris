@@ -1,0 +1,30 @@
+{
+    "name": "Usuarios",
+    "alias": "usuarios",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Usuarios\\Providers\\UsuariosServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "clave": "00",
+    "titulo": "Usuarios",
+    "icono": "fas fa-user-astronaut",
+    "contenido": {
+      "Usuarios": {
+        "enlace": "/usuarios",
+        "icono": "fas fa-table",
+        "permisos": [
+          "Nuevo usuario invitado",
+          "Nuevo usuario desde directorio activo",
+          "Asignar permisos",
+          "Ver detalles de usuario",
+          "Eliminar usuario",
+          "Dashboard"
+        ]
+      }
+    }
+}

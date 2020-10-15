@@ -1,0 +1,33 @@
+{
+  "name": "Catalogos",
+  "alias": "catalogos",
+  "description": "",
+  "keywords": [],
+  "order": 0,
+  "providers": [
+    "Modules\\Catalogos\\Providers\\CatalogosServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": [],
+  "clave": "03",
+  "titulo": "Catálogos",
+  "icono": "fas fa-database",
+  "contenido": {
+    "Entidades": { "enlace": "/catalogos/entidades/index", "icono": "fas fa-map" },
+    "Distritos Federales": { "enlace": "/catalogos/distritosfederales/index", "icono": "fas fa-map-marked-alt" },
+    "Distritos Locales": { "enlace": "/catalogos/distritoslocales/index", "icono": "fas fa-map-marker-alt" },
+    "Secciones": { "enlace": "/catalogos/secciones/index", "icono": "fas fa-map-pin" },
+    "Zonas": { "enlace": "/catalogos/zonas/index", "icono": "fas fa-map-signs" },
+    "Casillas": { "enlace": "/catalogos/casillas/index", "icono": "fas fa-home" },
+    "Lugares": { "enlace": "/catalogos/lugares/index" },
+    "Regiones": { "enlace": "/catalogos/regiones/index", "icono": "fas fa-layer-group" },
+    "Municipios": { "enlace": "/catalogos/municipios/index", "icono": "fas fa-landmark" },
+    "Colonias": { "enlace": "/catalogos/colonias/index", "icono": "fas fa-industry" },
+    "Código Postal": { "enlace": "/catalogos/codigopostal/index", "icono": "fas fa-kaaba" },
+    "Rangos de edad": { "enlace": "/catalogos/rangosedad/index", "icono": "fas fa-calendar-alt" },
+    "Gestores": { "enlace": "/catalogos/gestores/index", "icono": "fas fa-user" },
+    "Tipo Gestiones": { "enlace": "/catalogos/tipogestiones/index", "icono": "fas fa-user-cog" },
+    "Motivo Llamada": { "enlace": "/catalogos/motivollamada/index", "icono": "fas fa-phone-alt" }
+  }
+}

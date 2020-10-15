@@ -1,0 +1,40 @@
+{
+    "name": "Blog",
+    "alias": "blog",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Blog\\Providers\\BlogServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "clave": "99",
+    "titulo": "Blog",
+    "active": 0,
+    "contenido": {
+      "Usuarios": {
+        "enlace": "/usuarios/usuarios",
+        "icono": "person",
+        "permisos": [
+          "Nuevo usuario invitado",
+          "Nuevo usuario desde directorio activo",
+          "Asignar permisos",
+          "Ver detalles de usuario",
+          "Eliminar usuario",
+          "Dashboard"
+        ]
+      },
+      "Roles": {
+        "icono": "lock",
+        "enlace": "/usuarios/roles",
+        "permisos": [
+          "Nuevo rol",
+          "Ver detalles de rol",
+          "Editar rol",
+          "Eliminar rol"
+        ]
+      }
+    }
+}

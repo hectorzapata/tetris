@@ -1,0 +1,9 @@
+{
+    "Blog": true,
+    "Registro": true,
+    "Estructuras": true,
+    "Usuarios": true,
+    "Catalogos": true,
+    "Consultas": true,
+    "AppMovil": true
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Consultas",
+    "alias": "consultas",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Consultas\\Providers\\ConsultasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "clave": "04",
+    "titulo": "Consultas",
+    "contenido": {
+        "Consultas": {
+            "enlace": "/consultas",
+            "icono": "fas fa-config",
+            "permisos": [
+
+            ]
+        },
+         "Consulta Datos Ine": {
+            "enlace": "/consultas_ine",
+            "icono": "fas fa-config",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        },
+         "Carga Validación": {
+            "enlace": "/consulta_validacion",
+            "icono": "fas fa-config",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        },
+         "Consulta Gestiones": {
+            "enlace": "/consulta_gestiones",
+            "icono": "fas fa-config",
+            "permisos": [
+                "Crear",
+                "Editar",
+                "Eliminar"
+            ]
+        }
+    }
+}
