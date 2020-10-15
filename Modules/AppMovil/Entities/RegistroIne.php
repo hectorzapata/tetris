@@ -32,4 +32,8 @@ class RegistroIne extends Model{
     "ineimg",
     "cve_usuario"
   ];
+
+  public function obtUsuario(){
+    return $this->hasOne('\App\User', 'id', 'cve_usuario');
+  }
 }
