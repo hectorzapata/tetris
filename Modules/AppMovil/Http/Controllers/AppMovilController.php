@@ -101,11 +101,18 @@ class AppMovilController extends Controller{
   }
   public function registrarIne(Request $request){
     try {
-      $registroIne = RegistroIne::create($request->all());
-      return response()->json([
-        'message' => 'Registro realizado con éxito',
-        'registroIne' => $registroIne
-      ], 201);
+      if (validarPiezas()) {
+        $registroIne = RegistroIne::create($request->all());
+        return response()->json([
+          'message' => 'Registro realizado con éxito',
+          'registroIne' => $registroIne
+        ], 201);
+      }else{
+        return response()->json([
+          'message' => 'Límite de piezas alcanzado',
+          'request' => $request->all()
+        ], 501);
+      }
     } catch (\Exception $e) {
       return response()->json([
         'message' => 'Lo sentimos, ha ocurrido un error',

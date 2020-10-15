@@ -131,3 +131,13 @@ if (!function_exists('obtUsuariosConPermisos')) {
     return $tmp;
   }
 }
+if (!function_exists('validarPiezas')) {
+  function validarPiezas(){
+    $user = Auth::user();
+    $registros = \Modules\AppMovil\Entities\RegistroIne::where('cve_usuario', $user->id)->count();
+    if ( $registros >= $user->piezas ) {
+      return false;
+    }
+    return true;
+  }
+}
