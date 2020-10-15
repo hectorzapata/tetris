@@ -69,6 +69,13 @@
               <input name="passwordconfirm" type="text" class="form-control" placeholder="Escribe nuevamente la contraseña" value="{{ old('passwordconfirm') }}"/>
             </div>
           </div>
+          <div class="form-group row">
+            <div class="col-lg-6">
+              <label>Número de piezas:</label>
+              <input name="piezas" type="number" class="form-control" placeholder="Escribe el número máximo de piezas a registrar" value="{{ old('piezas') ? old('piezas') : ( isset($usuario) ? $usuario->piezas : "" ) }}"/>
+            </div>
+            <div class="col-lg-6"></div>
+          </div>
         </div>
         <div class="card-footer">
           <div class="row">
@@ -141,6 +148,13 @@
                   return $('input[name="password"]').val() == "" ? false : $('input[name="password"]').val();
                 },
                 message: 'La contraseña no coincide, por favor, confirma tu contraseña'
+              }
+            }
+          },
+          piezas: {
+            validators: {
+              notEmpty: {
+                message: 'Por favor, escribe el número de piezas permitidas'
               }
             }
           },
