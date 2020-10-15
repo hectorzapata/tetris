@@ -7,6 +7,7 @@
     "providers": [
         "Modules\\Registro\\Providers\\RegistroServiceProvider"
     ],
+    "active": 0,
     "aliases": {},
     "files": [],
     "requires": [],

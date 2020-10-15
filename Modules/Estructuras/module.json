@@ -4,6 +4,7 @@
     "description": "",
     "keywords": [],
     "order": 0,
+    "active": 0,
     "providers": [
         "Modules\\Estructuras\\Providers\\EstructurasServiceProvider"
     ],

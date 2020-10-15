@@ -7,6 +7,7 @@
     "providers": [
         "Modules\\Consultas\\Providers\\ConsultasServiceProvider"
     ],
+    "active": 0,
     "aliases": {},
     "files": [],
     "requires": [],
