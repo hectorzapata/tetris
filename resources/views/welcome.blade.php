@@ -120,7 +120,7 @@
   <div class="header">
     <!--Content before waves-->
     <div class="inner-header flex">
-      <h1>Organismos</h1>
+      <h1>Tetris</h1>
     </div>
     @auth
       <a href="{{ url('/home') }}">Inicio</a>
@@ -148,7 +148,7 @@
 <!--Content starts-->
 <div class="content flex">
   <p>
-    Organismos | 2020
+    Tetris | 2020
   </p>
 </div>
 <!--Content ends-->
