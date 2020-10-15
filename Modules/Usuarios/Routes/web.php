@@ -18,4 +18,6 @@ Route::prefix('usuarios')->middleware('auth')->group(function() {
   Route::post('/store', 'UsuariosController@store');
   Route::get('/{id}/edit', 'UsuariosController@edit');
   Route::post('/{id}/edit', 'UsuariosController@update');
+  Route::post('/{id}/bloquear', 'UsuariosController@bloquear');
+  Route::post('/{id}/desbloquear', 'UsuariosController@desbloquear');
 });

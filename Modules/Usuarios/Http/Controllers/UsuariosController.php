@@ -114,13 +114,33 @@ class UsuariosController extends Controller{
     }
   }
 
-  /**
-  * Remove the specified resource from storage.
-  * @param int $id
-  * @return Renderable
-  */
   public function destroy($id){
     //
+  }
+
+  public function bloquear($id){
+    try {
+      $user = User::find($id);
+      $user->activo = 2;
+      $user->save();
+      flash('Usuario bloqueado con éxito')->success();
+      return redirect('/usuarios');
+    } catch (\Exception $e) {
+      flash('Lo sentimos, ha ocurrido un error al intentar bloquear el usuario')->warning();
+      return back();
+    }
+  }
+  public function desbloquear($id){
+    try {
+      $user = User::find($id);
+      $user->activo = 1;
+      $user->save();
+      flash('Usuario desbloqueado con éxito')->success();
+      return redirect('/usuarios');
+    } catch (\Exception $e) {
+      flash('Lo sentimos, ha ocurrido un error al intentar desbloquear el usuario')->warning();
+      return back();
+    }
   }
 
   public function tabla(Request $request){
@@ -155,27 +175,24 @@ class UsuariosController extends Controller{
           "icon" => "edit blue",
           "href" => "/usuarios/$value->id/edit"
         ],
-        "Permisos" => [
-          "icon" => "key green",
-          "href" => "/usuarios/$value->id/permisos"
-        ],
-        "Ver detalles" => [
-          "icon" => "eye teal",
-          "href" => "/usuarios/$value->id/show"
-        ],
         "Eliminar" => [
           "icon" => "trash red",
           "onclick" => "eliminar('$value->id')"
+        ],
+        "Bloquear" => [
+          "icon" => "trash red",
+          "onclick" => "bloquear('$value->id')"
+        ],
+        "Desbloquear" => [
+          "icon" => "trash red",
+          "onclick" => "desbloquear('$value->id')"
         ]
       ];
-      if ( !permiso('ms001', 'Asignar permisos') ) {
-        unset($acciones['Permisos']);
-      }
-      if ( !permiso('ms001', 'Ver detalles de usuario') ) {
-        unset($acciones['Ver detalles']);
-      }
-      if ( !permiso('ms001', 'Eliminar usuario') ) {
-        unset($acciones['Eliminar']);
+      $value->estatus = $value->activo == 1 ? '<p class="text-success">Activo</p>' : '<p class="text-danger">Bloqueado</p>';
+      if ( $value->activo == 1 ) {
+        unset($acciones['Desbloquear']);
+      }else{
+        unset($acciones['Bloquear']);
       }
       $value->acciones = generarDropdown($acciones);
     }

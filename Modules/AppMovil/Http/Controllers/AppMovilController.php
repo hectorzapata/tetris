@@ -101,7 +101,8 @@ class AppMovilController extends Controller{
   }
   public function registrarIne(Request $request){
     try {
-      if (validarPiezas()) {
+      $v = validarPiezas();
+      if ( $v[0] ) {
         $registroIne = RegistroIne::create($request->all());
         return response()->json([
           'message' => 'Registro realizado con éxito',
@@ -109,7 +110,7 @@ class AppMovilController extends Controller{
         ], 201);
       }else{
         return response()->json([
-          'message' => 'Límite de piezas alcanzado',
+          'message' => $v[1],
           'request' => $request->all()
         ], 501);
       }

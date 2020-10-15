@@ -134,10 +134,13 @@ if (!function_exists('obtUsuariosConPermisos')) {
 if (!function_exists('validarPiezas')) {
   function validarPiezas(){
     $user = Auth::user();
+    if ( $user->activo != 1 ) {
+      return [false, "Registro no disponible"];
+    }
     $registros = \Modules\AppMovil\Entities\RegistroIne::where('cve_usuario', $user->id)->count();
     if ( $registros >= $user->piezas ) {
-      return false;
+      return [false, "Límite de piezas alcanzado"];
     }
-    return true;
+    return [true];
   }
 }

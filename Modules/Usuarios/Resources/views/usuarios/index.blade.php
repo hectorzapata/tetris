@@ -44,8 +44,9 @@
             <th>Username</th>
             <th>Nombres</th>
             <th>Apellidos</th>
-            <th>Email</th>
+            <th>Piezas</th>
             <th>Fecha creación</th>
+            <th>Estatus</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -54,6 +55,50 @@
     </div>
   </div>
   <!--end::Card-->
+  <div class="modal fade" id="modalBloquear" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bloquear usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <form method="post">
+          @csrf
+          <div class="modal-body">
+            Estás bloqueando un usuario, que ya no podrá registrar piezas, ¿realmente quieres hacerlo?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">No</button>
+            <button type="submit" class="btn btn-primary font-weight-bold">Si</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalDesbloquear" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Desbloquear usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <form method="post">
+          @csrf
+          <div class="modal-body">
+            Estás desbloqueando un usuario, que podrá registrar piezas, ¿realmente quieres hacerlo?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">No</button>
+            <button type="submit" class="btn btn-primary font-weight-bold">Si</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 @endsection
 @section('script')
   <!--begin::Page Vendors(used by this page)-->
@@ -86,14 +131,9 @@
             return data ? ( data.length > 30 ? data.substr( 0, 30 ) + "..." : data ) : "";
           }
         },
-        {
-          data: 'email',
-          name: 'email',
-          render: function ( data, type, row ) {
-            return data ? ( data.length > 30 ? data.substr( 0, 30 ) + "..." : data ) : "";
-          }
-        },
+        { data: 'piezas', name: 'piezas' },
         { data: 'created_at', name: 'created_at' },
+        { data: 'estatus', name: 'estatus', searchable: false, orderable:false, width: '60px', class: 'acciones' },
         { data: 'acciones', name: 'acciones', searchable: false, orderable:false, width: '60px', class: 'acciones' }
       ],
       createdRow: function ( row, data, index ) {
@@ -102,5 +142,13 @@
       language: { url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json" }
     });
   });
+  function bloquear(id) {
+    $('#modalBloquear form').attr('action', "/usuarios/" + id + "/bloquear");
+    $('#modalBloquear').modal('show');
+  }
+  function desbloquear(id) {
+    $('#modalDesbloquear form').attr('action', "/usuarios/" + id + "/desbloquear");
+    $('#modalDesbloquear').modal('show');
+  }
   </script>
 @endsection
