@@ -56,7 +56,9 @@ class AppMovilController extends Controller{
   public function tabla(Request $request){
     setlocale(LC_TIME, 'es_ES');
     \DB::statement("SET lc_time_names = 'es_ES'");
-    $registro = RegistroIne::with('obtUsuario')->where('05_t_ine_app.activo', 1);
+    $registro = RegistroIne::with('obtUsuario')
+      ->where('05_t_ine_app.cve_usuario', Auth::user()->id)
+      ->where('05_t_ine_app.activo', 1);
     $datatable = DataTables::of($registro)
     ->editColumn('municipio', function ($registro) {
       $municipios = Municipios::where([['cve_ent',28],['cve_mun',$registro->municipio]])->get();
